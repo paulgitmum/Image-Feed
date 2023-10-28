@@ -1,28 +1,22 @@
 
 import { getEpisodes } from '@/app/api/utils/api';
 import { ApiResponse } from '@/app/api/utils/api';
-import List from '@/components/List/List';
-import { Box} from "@mui/material";
+import EpisodeList from '@/components/List/EpisodeList';
+import { Box, List, Typography } from "@mui/material";
 
 const Sidebar: React.FC = async () => {
     const data: Promise<ApiResponse> = getEpisodes()
     const episodes = (await data).results;
     return (
         <Box>
-            <Box style={{position: 'absolute',marginTop: 0,marginLeft: 0,height: '100vh',display: 'flex',flexDirection: 'column',overflowY: 'hidden'
-            }}>
-                <Box style={{ display: 'flex', flexDirection: 'column', overflowY: 'auto', }}>
-                    <ul style={{
-                        marginBottom: 6,
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}>
-                        {
-                            episodes.map((episode) => <List episode={episode}/>
-                            )
-                        }
-                    </ul>
-                </Box>
+            <Box>
+                <Typography variant='h5' sx={{ mt: 2, ml: 2 }}>Episodes</Typography>
+                <List
+                    dense sx={{ marginTop: 5, width: '100%', maxWidth: '350',  position: 'relative', overflow: 'auto', maxHeight: 500, background: '#f0f3f0' }}>
+                    {
+                        episodes.map((episode) => <EpisodeList episode={episode}></EpisodeList>)
+                    }
+                </List>
             </Box>
         </Box>
     )

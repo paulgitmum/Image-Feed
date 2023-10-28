@@ -13,10 +13,9 @@ type Params = {
 async function page({ params: { id } }: Params) {
     const data: Promise<EpisodeData> = fetchEpisodeCharacters(id)
     const characters = (await data).characters;
-    console.log('name', characters)
     return (
-        <Box style={{ marginTop: '20px', height: '80vh', overflowY: 'scroll' }}>
-            <Typography sx={{ mb:1}} >{`${characters.length} Characters in this episode`}</Typography>
+        <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center',justifyContent:'center',}}>
+            <Typography variant='h5' sx={{ mb:2, mt:2}} >{`${characters.length} Characters in this episode`}</Typography>
             <Box >
                 <Characters characters={characters} />
             </Box>

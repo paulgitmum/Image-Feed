@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import { Box, Typography, Grid, Paper } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import {  CharacterList, CharctersProps } from '@/app/api/utils/api';
 
 const Characters: React.FC<CharctersProps> = ({ characters }) => {
@@ -24,24 +24,23 @@ const Characters: React.FC<CharctersProps> = ({ characters }) => {
     }, [characters])
 
     return (
-        <Box>
-            <Box style={{ marginTop: '20px', height: '80vh'}}>
-                <Grid container spacing={3}>
-                    {characterList.map((character) => {
-                        return <Grid item xs={2} key={character.id} sx={{ alignItems:'center'}}>
-                            <Paper elevation={2}>
-                                <img
-                                    src={character.image}
-                                    alt={character.name}
-                                    style={{ width: '100%', height: 'auto', borderRadius:'5px' }}
-                                />
-                            </Paper>
-                            <Typography sx={{color:'black'}}>{character.name}</Typography>
-                        </Grid>
-                    })}
-                </Grid>
-            </Box>
-        </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Grid
+            container
+            spacing={3}
+            alignItems="left"
+            justifyContent="center"
+        >
+            {
+                characterList.map((character) => (
+                    <Grid key={character.id} item>
+                        <img src={character.image} alt={character.name} style={{ width: '150px', height: 'auto', borderRadius: '5px' }} />
+                        <Typography sx={{color:'black', fontSize:'12px'}}>{character.name}</Typography>
+                    </Grid>
+                ))
+            }
+        </Grid>
+    </Box>
     )
 }
 

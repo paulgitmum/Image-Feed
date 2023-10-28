@@ -31,7 +31,11 @@ export type Location = {
     name: string;
     url: string;
 }
-
+export type Episode = {
+    id: string,
+    name: string,
+    characters: string[]
+  }
 export type Character = {
     id: string;
     name: string;
