@@ -1,7 +1,7 @@
 
 ## Getting Started
 
-Download the compressed file and extract it on your local machine.
+clone the repo to your local machine by using the provided link
 Open the file using Visual Studio Code Editor 
 In terminal run  npm install 
 Once the installation is completed excute  npm run dev

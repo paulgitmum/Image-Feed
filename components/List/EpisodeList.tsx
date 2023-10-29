@@ -23,6 +23,7 @@ const EpisodeList: React.FC<{ episodes: EpisodeData[] }> = ({ episodes }) => {
         episodes.map((episode) => (
           <Link
           href={`/episode/${episode.id}`}
+          key={episode.id}
         >
           <ListItemButton
             onClick={() => handleEpisodeSelect(episode.id)}
