@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link';
 import { List, ListItemButton, ListItemText } from "@mui/material";
 import { useState } from 'react';
-import { EpisodeData } from '@/app/api/utils/api';
+import { EpisodeData } from '@/app/api/utils/types/types';
 
 const EpisodeList: React.FC<{ episodes: EpisodeData[] }> = ({ episodes }) => {
   const [selectedEpisode, setSelectedEpisode] = useState<string | null>(null)

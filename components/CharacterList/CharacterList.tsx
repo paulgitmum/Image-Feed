@@ -1,5 +1,5 @@
 
-import { CharacterListProps } from '@/app/api/utils/api';
+import { CharacterListProps } from '@/app/api/utils/types/types';
 import { Box, Typography, Grid } from '@mui/material';
 
 const CharacterList: React.FC<CharacterListProps> = ({ allCharacters }) => {

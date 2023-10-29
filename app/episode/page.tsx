@@ -1,8 +1,8 @@
 
-import { EpisodeData, getEpisodes } from '@/app/api/utils/api';
-import { ApiResponse } from '@/app/api/utils/api';
+import { getEpisodes } from '@/app/api/utils/api';
+import { ApiResponse } from '@/app/api/utils/types/types';
 import EpisodeList from '@/components/List/EpisodeList';
-import { Box, List, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Sidebar: React.FC = async () => {
     const data: Promise<ApiResponse> = getEpisodes()

@@ -3,7 +3,7 @@
 import { fetchEpisodeCharacters } from '../../api/utils/api';
 import Characters from '@/components/Characters/Characters';
 import { Box, Typography } from "@mui/material";
-import { EpisodeData } from '@/app/api/utils/api';
+import { EpisodeData } from '@/app/api/utils/types/types';
 
 type Params = {
     params: {

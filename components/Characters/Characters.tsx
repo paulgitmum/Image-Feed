@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { Box, Typography, Grid } from '@mui/material';
-import {  CharacterList, CharctersProps } from '@/app/api/utils/api';
+import {  CharacterList, CharctersProps } from '@/app/api/utils/types/types';
 
 const Characters: React.FC<CharctersProps> = ({ characters }) => {
     const [characterList, setCharacterList] = useState<CharacterList[]>([])
