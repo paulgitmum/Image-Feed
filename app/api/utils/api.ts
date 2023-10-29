@@ -74,7 +74,6 @@ export type CharctersProps = {
     characters: string[];
 }
 
-
 const BASE_URL: string = 'https://rickandmortyapi.com/api/';
 
 export async function fetchCharacters(): Promise<CharactersApiResponse> {
