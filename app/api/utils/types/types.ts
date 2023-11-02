@@ -71,7 +71,11 @@ export type CharacterListProps = {
 export type CharctersProps = {
     characters: string[];
 }
-
+export type PaginationProps = {
+    currentPage:number;
+    totalPage:number;
+    handlePageChange:(event:React.ChangeEvent<unknown>, page:number)=>void;
+}
 
 
 

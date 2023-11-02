@@ -7,12 +7,13 @@ import { Box, Typography } from "@mui/material";
 const Sidebar: React.FC = async () => {
     const data: Promise<ApiResponse> = getEpisodes()
     const episodes = (await data).results;
-    console.log("episodes", episodes)
     return (
-        <Box>
+        <Box sx={{ ml: 2 }}>
             <Box>
-                <Typography variant='h5' sx={{ mt: 2, ml: 2 }}>Episodes</Typography>
-                <EpisodeList episodes={episodes}/>
+                <Box>
+                    <Typography variant='h5' sx={{ mt: 5, color: 'gray', mb: 2 }}>Episodes</Typography>
+                </Box>
+                <EpisodeList episodes={episodes} />
             </Box>
         </Box>
     )

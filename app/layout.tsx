@@ -17,15 +17,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} >
-        <Box sx={{ display: 'flex'}}>
-          <Box
-            sx={{ flex: 1}}>
-            <Sidebar />
+        <Box sx={{ display: 'flex' }}>
+          <Box sx={{
+            flex: '25%',
+            minHeight: '100vh',
+            borderRight: '2px solid whiteSmoke'
+          }}>
+            <Sidebar/>
           </Box>
-          <Box sx={{ flex: 3, height: 'screen', display: 'flex', justifyContent: 'center', m:5 }}>
-            <main >
-              {children}
-            </main>
+          <Box sx={{
+            flex: '75%',
+            minHeight: '100vh'
+          }}>
+            {children}
           </Box>
         </Box>
       </body>
